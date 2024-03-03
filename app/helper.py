@@ -14,25 +14,28 @@ def get_ordered_files(dir_name):
 
 def get_next_tn(dir_name):
     current_path = dir_name +"/current.json"
-    with open(current_path, 'r') as openfile:
-        current_tn = json.load(openfile)
-
     tns = get_ordered_files(dir_name)
+    
+    if os.path.isfile(current_path):
+        with open(current_path, 'r') as openfile:
+            current_tn = json.load(openfile)
 
-    tn_name = ""
-    for i, tn in enumerate(tns):
-        if tn == current_tn["current"]:
-            tn_name = tns[(i+1)%len(tns)]
-            break
+        tn_name = ""
+        for i, tn in enumerate(tns):
+            if tn == current_tn["current"]:
+                tn_name = tns[(i+1)%len(tns)]
+                break
 
-    if tn_name == current_tn["current"]:
-        # nothing changed
-        return None
-    elif tn_name == "":
-        # old thumbnail was not found in dir
+        if tn_name == current_tn["current"]:
+            # nothing changed
+            return None
+        elif tn_name == "":
+            # old thumbnail was not found in dir
+            tn_name = tns[0]
+    else:
         tn_name = tns[0]
     
-    current_tn["current"] = tn_name
+    current_tn = {"current":tn_name}
 
     with open(current_path, "r") as outfile:
         outfile.write(json.dumps(current_tn))
