@@ -165,3 +165,4 @@ app/test_data/output/*.png
 app/secrets.json
 app/secrets.json
 CREDENTIALS_PICKLE_FILE
+app/client_secret_442472996695-mklustimn2aj9i5afbhe9o6cotmuocus.apps.googleusercontent.com.json
