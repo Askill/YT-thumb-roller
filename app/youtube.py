@@ -12,7 +12,7 @@ def get_authenticated_service():
     scopes = ["https://www.googleapis.com/auth/youtube.readonly", "https://www.googleapis.com/auth/youtube.upload"]
     api_service_name = "youtube"
     api_version = "v3"
-    client_secrets_file = "secrets.json"
+    client_secrets_file = "app/secrets.json"
     if os.path.exists("CREDENTIALS_PICKLE_FILE"):
         with open("CREDENTIALS_PICKLE_FILE", 'rb') as f:
             credentials = pickle.load(f)

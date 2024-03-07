@@ -37,7 +37,7 @@ def get_next_tn(dir_name):
     
     current_tn = {"current":tn_name}
 
-    with open(current_path, "r") as outfile:
+    with open(current_path, "w") as outfile:
         outfile.write(json.dumps(current_tn))
 
     return tn_name
