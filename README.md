@@ -3,7 +3,10 @@
 Automatically rotate youtube thumbnails, if you're not VIP enough for youtube to grant you the ability.
 
 ## Prerequisite
-You need a GCP Account, create a new project, create a OAuth 2.0-Client for a Desktop Application, this will give you the `client_id`, `project_id` and `client_secret` which you need to insert into `app/secrets.json`.
+
+Follow this guide to obtain youtube API access: https://developers.google.com/youtube/registering_an_application
+You need a GCP Account -> create a new project -> create a OAuth 2.0-Client for a Desktop Application (follow the guide above). 
+This will give you the `client_id`, `project_id` and `client_secret` which you need to insert into `app/secrets.json` opr download as a json file, just overwrite the existing one.
 
 ## Setup and Usage
 
